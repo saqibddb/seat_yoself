@@ -7,6 +7,7 @@ class CreateRestaurants < ActiveRecord::Migration
       t.string :name
       t.string :menu_url
       t.string :picture_url
+      t.integer :capacity
 
       t.timestamps null: false
     end
