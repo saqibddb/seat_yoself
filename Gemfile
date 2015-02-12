@@ -42,7 +42,7 @@ group :development, :test do
   gem 'awesome_print'
   gem 'quiet_assets'
   gem 'better_errors'
-
+  gem 'rspec-rails'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
