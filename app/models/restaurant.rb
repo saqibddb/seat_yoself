@@ -3,4 +3,12 @@ class Restaurant < ActiveRecord::Base
 
   has_many :reservations
   has_many :users, through: :reservations
+
+  def self.search(search)
+    if search
+      find(:all, :conditions => ['name LIKE ?', "%#{search}%"])
+    else
+      find(:all)
+    end
+  end
 end
