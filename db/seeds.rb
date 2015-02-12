@@ -99,35 +99,3 @@ puts "\nCreating Reservations..."
     restaurant_id: Restaurant.all.sample.id
   )
 end
-
-puts "\nCreating Categories..."
-Category.create!(
-  cuisine: "Chinese"
-)
-Category.create!(
-  cuisine: "Indian"
-)
-Category.create!(
-  cuisine: "Steakhouse"
-)
-Category.create!(
-  cuisine: "Mexican"
-)
-Category.create!(
-  cuisine: "Italian"
-)
-Category.create!(
-  cuisine: "American"
-)
-Category.create!(
-  cuisine: "Burger Joint"
-)
-
-puts "\nCreating RestaurantCategories..."
-14.times do 
-  RestaurantCategory.create!(
-    restaurant_id: Restaurant.all.sample.id,
-    category_id: Category.all.sample.id
-  )
-print "|"
-end

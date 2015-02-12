@@ -10,22 +10,14 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.find(params[:id])
   end
 
-  def new
+  def create
 
   end
 
   def edit
   end
 
-  def create
-    binding.pry
-    # d = DateTime.new(params[:date][:day])
-
-    puts params
-
-    @ex = params
-
-  end
+ 
 
   def update
   end
