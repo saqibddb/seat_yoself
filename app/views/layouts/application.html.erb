@@ -8,7 +8,9 @@
 </head>
 <body>
 
-<h1>Seat YoSelf</h1>
+  <h1>Seat YoSelf</h1>
+
+  <%= render 'layouts/form' %>
 
   <% if flash[:notice] %>
     <p id="notice"><%= flash[:notice] %></p>
@@ -17,7 +19,7 @@
     <p id="alert"><%= flash[:alert] %></p>
   <% end %>
 
-<%= yield %>
+  <%= yield %>
 
   <p class="userinfo">
     <% if current_user %>

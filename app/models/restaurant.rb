@@ -6,7 +6,7 @@ class Restaurant < ActiveRecord::Base
 
   def self.search(search)
     if search
-      find('name LIKE ?', "%#{search}%")
+      where("LOWER(name) LIKE ?", "%#{search.downcase}%")
     else
       self.all
     end
