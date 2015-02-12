@@ -1,5 +1,6 @@
-<%= form_for @restaurant, url: {action: "get"} do |f| %>
-
-	<%= f.textfield :name %>
-
+<%= form_tag restaurants_path, :method => 'get' do %>
+  <p>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
 <% end %>

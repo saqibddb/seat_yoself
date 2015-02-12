@@ -4,7 +4,7 @@ class RestaurantsController < ApplicationController
   # Only want them to see all restaurants and show a particular restaurant
 
   def index
-    @restaurants = Restaurant.all
+    @restaurants = Restaurant.search(params[:search]) 
   end
 
   def show
