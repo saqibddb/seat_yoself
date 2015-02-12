@@ -1,3 +1,5 @@
+Restaurant.destroy_all
+
 puts "Creating admin..."
 User.create!(
   email: "admin@example.com",
@@ -20,6 +22,7 @@ end
 puts "\nCreating Restaurants..."
 Restaurant.create!(
   name: "Panera Bread",
+  cuisine: "American",
   city: "Toronto",
   address: "322 Yonge Street, Toronto ON M5B 1R8",
   phone_number: "(416) 205-9371",
@@ -28,6 +31,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Canoe",
+  cuisine: "Canadian",
   city: "Toronto",
   address: "66 Wellington St West (at Bay Street), Toronto ON M5K 1H6",
   phone_number: "(416) 364-0054",
@@ -37,6 +41,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Black Camel",
+  cuisine: "Sandwhiches",
   city: "Toronto",
   address: "4 Crescent Rd (Yonge), Toronto ON M4W 1S9",
   phone_number: "(416) 929-7518",
@@ -46,6 +51,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Pizzeria Libretto",
+  cuisine: "Pizza",
   city: "Toronto",
   address: "221 Ossington Ave (at Dundas St W), Toronto ON M6J 2Z8",
   phone_number: "(416) 532-8000",
@@ -55,6 +61,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Banh Mi Boys",
+  cuisine: "Japanese",
   city: "Toronto",
   address: "392 Queen St. W, Toronto ON M5V 2A6",
   phone_number: "(416) 363-0588",
@@ -64,6 +71,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Dhaba Indian express",
+  cuisine: "Indian",
   city: "Toronto",
   address: "300 Queen St. W, Toronto ON M5V 2A6",
   phone_number: "(416) 333-0588",
@@ -73,6 +81,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "Amsterdam Brewhouse & Restaurant",
+  cuisine: "Dutch",
   city: "Toronto",
   address: "120 Queen St. E, Toronto ON M5V 2A6",
   phone_number: "(416) 433-1298",
@@ -82,6 +91,7 @@ Restaurant.create!(
 )
 Restaurant.create!(
   name: "BlowFish on Bay",
+  cuisine: "Japanese",
   city: "Toronto",
   address: "200 Bay St., Toronto ON M5V 2A6",
   phone_number: "(416) 335-0548",
