@@ -1,0 +1,8 @@
+<h2>Restaurants</h2>
+
+
+<% @restaurants.each do |restaurant| %>
+	<p><%= link_to image_tag(restaurant.picture_url), restaurant_path(restaurant) %> </p>
+	<p><%= restaurant.name %> </p>
+	<p><%= restaurant.city %></p>
+<% end %>
