@@ -13,6 +13,7 @@ class Admin::ReservationsController < Admin::ApplicationController
   end
 
   def create
+    puts params
   end
 
   def update
