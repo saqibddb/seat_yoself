@@ -1,0 +1,8 @@
+<h2>Your Reservation Info</h2>
+
+<p>Restaurant: <%= @reservation.restaurant.name %></p>
+<p>Customer Name: <%= @reservation.user.name %></p> 
+<p>Reservation for <%= @reservation.time %></p>
+<p>Party Size: <%= @reservation.party_size %></p>
+
+<h3>Use this number to help us verify you once you reach our restaurant: <%= @reservation.id %>3123</h3>
