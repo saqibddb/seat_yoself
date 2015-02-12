@@ -1,5 +1,14 @@
 <h3><%= @restaurant.name %></h3>
 
+<img src="<%= @restaurant.picture_url %>" alt="<%= @restaurant.name %>">
+<p><%= @restaurant.city %></p>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.capacity %></p>
+<% if @restaurant.menu_url? %>
+  <p><%= @restaurant.menu_url %></p>
+<% end %>
+
 <% if current_user %>
   <h4>New Reservation</h4>
 
