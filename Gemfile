@@ -41,6 +41,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'quiet_assets'
+  gem 'better_errors'
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
