@@ -1,7 +1,6 @@
 <h3><%= @restaurant.name %></h3>
 
 
-
 <% if current_user %>
   <h4>New Reservation</h4>
 
@@ -19,30 +18,12 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :day %><br />
-      <%= date_field(:date, :day) %>
-    </div>
-
-    <div class="field">
-      <%= f.label :time %><br />
-      <%= select_tag(:time, options_for_select(
-        [['12:00', 0], 
-        ['1:00', 1],
-        ['2:00', 2],
-        ['3:00', 3],
-        ['4:00', 4],
-        ['5:00', 5],
-        ['6:00', 6],
-        ['7:00', 7],
-        ['8:00', 8],
-        ['9:00', 9],
-        ['10:00', 10]]  
-      )) %>
+      <%= f.datetime_select :time, { start_hour: 12, end_hour: 22, ampm: true, discard_minute: true } %>
     </div>
 
     <div class="field">
       <%= f.label :party_size %><br />
-      <%= number_field(:reservation, :party_size, in: 1.0..50.0, step: 1) %>
+      <%= f.number_field(:party_size, {in: 1.0..50.0, step: 1}) %>
     </div>
   
     <div class="actions">
