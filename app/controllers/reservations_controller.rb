@@ -12,13 +12,12 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
 
     @reservation = @restaurant.reservations.build(reservation_params)
     @reservation.user = current_user
     if @reservation.save
-      redirect_to restaurant_reservations_path
+      redirect_to restaurant_reservation_path(@restaurant, @reservation)
     end
   end
 
@@ -34,7 +33,7 @@ class ReservationsController < ApplicationController
   private
   
   def reservation_params
-    params.require(:reservation).permit(:time, :party_size, :restaurant_id)
+    params.require(:reservation).permit(:date, :hour, :party_size, :restaurant_id)
   end
 
   def load_restaurant

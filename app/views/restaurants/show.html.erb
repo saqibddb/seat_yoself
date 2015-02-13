@@ -25,9 +25,13 @@
         </ul>
       </div>
     <% end %>
-
+    
     <div class="field">
-      <%= f.date_select :time, { start_hour: 12, end_hour: 22, ampm: true, discard_minute: true } %>
+      <%= f.label :date %><br />
+      <%= f.date_field :date %>
+     <%= f.label :hour %>
+     <%= f.select :hour, [ 
+     ["12pm", 12], ["1pm", 13], ["2pm", 14], ["3pm", 15], ["4pm", 16], ["5pm", 17], ["6pm", 18], ["7pm", 19], ["8pm", 20], ["9pm", 21], ["10pm", 22]]%>
     </div>
 
     <div class="field">

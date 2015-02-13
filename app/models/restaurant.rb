@@ -17,9 +17,9 @@ class Restaurant < ActiveRecord::Base
     party_size <= (capacity - reserved)
   end
 
-  def reservations_at(time)
-    time(5i) = 0 #minutes
-    reservations.where(["time >= ? and time < ?", start, start + 1.hour])
-  end
+  # def reservations_at(time)
+  #   time(5i) = 0 #minutes
+  #   reservations.where(["time >= ? and time < ?", start, start + 1.hour])
+  # end
 
 end
