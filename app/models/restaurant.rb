@@ -12,14 +12,10 @@ class Restaurant < ActiveRecord::Base
     end
   end
 
-  def available?(party_size, time)
-    # reserved = reservations.where(:time => reservation_at(params[:time]))sum(:party_size)
+  def available?(party_size, date, hour)
+    reserved = reservations.where(:hour => hour).sum(:party_size)
     party_size <= (capacity - reserved)
   end
 
-  # def reservations_at(time)
-  #   time(5i) = 0 #minutes
-  #   reservations.where(["time >= ? and time < ?", start, start + 1.hour])
-  # end
 
 end
