@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
 
     @reservation = @restaurant.reservations.build(reservation_params)
