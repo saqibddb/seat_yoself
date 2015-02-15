@@ -19,15 +19,18 @@
     <p id="alert"><%= flash[:alert] %></p>
   <% end %>
 
-  <%= yield %>
-
   <p class="userinfo">
     <% if current_user %>
       Signed in as <%= current_user.name %> - <%= link_to "Log out", session_path("current"), :method => :delete %>
+      <%= link_to "My Reservations", restaurant_reservations_path("current") %>
     <% else %>
       <%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
     <% end %>
   </p>
+
+  <%= yield %>
+
+
 
 </body>
 </html>
