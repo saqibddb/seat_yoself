@@ -26,6 +26,7 @@ class ReservationsController < ApplicationController
 
   def edit
     @reservation = Reservation.find(params[:id])
+    @restaurant = @reservation.restaurant
   end
 
   def update
