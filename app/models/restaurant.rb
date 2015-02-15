@@ -12,14 +12,28 @@ class Restaurant < ActiveRecord::Base
     end
   end
 
-  def available?(party_size, time)
-    # reserved = reservations.where(:time => reservation_at(params[:time]))sum(:party_size)
-    party_size <= (capacity - reserved)
+  def time_options
+    (9..22).map do |hour|
+      ampm, twelve_hour = hour.divmod(12)
+      twelve_hour = 12 if twelve_hour == 0
+      text = "#{twelve_hour} #{ampm == 0 ? "am" : "pm"}"
+      [text, hour]
+    end
   end
 
-  # def reservations_at(time)
-  #   time(5i) = 0 #minutes
-  #   reservations.where(["time >= ? and time < ?", start, start + 1.hour])
-  # end
+  def available?(party_size, date, hour)
+    party_size = party_size.to_i
+    hour = hour.to_i
+    
+    reserved = reservations.where(:hour => hour, :date => date).sum(:party_size)
+    availability = capacity - reserved
+
+    p size: party_size, hour: hour, date: date, reserved: reserved, cap: capacity, availability: availability
+    
+    party_size <= availability
+  end
+
+
+
 
 end

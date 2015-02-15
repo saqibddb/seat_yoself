@@ -1,6 +1,7 @@
 <h3><%= @restaurant.name %></h3>
+<table><tr><td>
 
-<img src="<%= @restaurant.picture_url %>" alt="<%= @restaurant.name %>">
+<img src="<%= @restaurant.picture_url %>" alt="<%= @restaurant.name %>" width="20%">
 <p>Type: <%= @restaurant.cuisine %></p>
 <p>City: <%= @restaurant.city %></p>
 <p>address: <%= @restaurant.address %></p>
@@ -9,6 +10,10 @@
 <% if @restaurant.menu_url? %>
   <p>Menu URL: <a href="<%= @restaurant.menu_url %>">View Menu</a></p>
 <% end %>
+
+</td>
+
+<td>
 
 <% if current_user %>
   <h4>New Reservation</h4>
@@ -30,8 +35,7 @@
       <%= f.label :date %><br />
       <%= f.date_field :date %>
      <%= f.label :hour %>
-     <%= f.select :hour, [ 
-     ["12pm", 12], ["1pm", 13], ["2pm", 14], ["3pm", 15], ["4pm", 16], ["5pm", 17], ["6pm", 18], ["7pm", 19], ["8pm", 20], ["9pm", 21], ["10pm", 22]]%>
+     <%= f.select :hour, @restaurant.time_options %>
     </div>
 
     <div class="field">
@@ -47,3 +51,5 @@
 <% else %>
   <p>Please <%= link_to "log in", new_session_path %> to make a reservation.</p> 
 <% end %>
+
+</td></tr></table>
