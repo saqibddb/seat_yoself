@@ -11,14 +11,14 @@
 	<% end %>
 
 	<div class="field">
-		<%= f.label :date %><br />
+		<%= f.label :date %><br>
 		<%= f.date_field :date %>
 		<%= f.label :hour %>
 		<%= f.select :hour, @restaurant.time_options %>
 	</div>
 
 	<div class="field">
-	  <%= f.label :party_size %><br />
+	  <%= f.label :party_size %><br>
 	  <%= f.number_field(:party_size, {in: 1.0..50.0, step: 1}) %>
 	</div>
 
