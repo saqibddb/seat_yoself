@@ -25,9 +25,17 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
   end
 
   def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update_attributes(reservation_params)
+      redirect_to reservation_path(@reservation)
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -40,7 +48,6 @@ class ReservationsController < ApplicationController
   end
 
   def load_restaurant
-    # binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 
