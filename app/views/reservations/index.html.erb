@@ -2,16 +2,18 @@
 
 <% @reservations.each do |reservation| %>
 	<li>
-		
-			<% if reservation.restaurant %>
-				<%= reservation.restaurant.name %>
-			<% end %>
-			<br>
-			<%= reservation.hour %>
-			<br>
-			<%= reservation.party_size %>
-			<br>
-			<%= reservation.date %>
+		<% if reservation.restaurant %>
+			<%= link_to reservation.restaurant.name, restaurant_reservation_path(reservation.restaurant, reservation) %>
+		<% end %>
+		<%= link_to "Edit Reservation", edit_restaurant_reservation_path(reservation.restaurant, reservation) %>
+		|
+		<%= link_to 'Destroy', [reservation.restaurant, reservation], method: :delete, data: { confirm: 'Are you sure?' } %>
+		<br>
+		Date: <%= reservation.date %>
+		<br>
+		Time: <%= reservation.hour %>
+		<br>
+		Party of: <%= reservation.party_size %>
 	</li>
 <% end %>
 

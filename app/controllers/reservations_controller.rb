@@ -25,12 +25,24 @@ class ReservationsController < ApplicationController
   end
 
   def edit
+    @reservation = Reservation.find(params[:id])
+    @restaurant = @reservation.restaurant
   end
 
   def update
+    @reservation = Reservation.find(params[:id])
+
+    if @reservation.update_attributes(reservation_params)
+      redirect_to restaurant_reservation_path(@reservation.restaurant, @reservation)
+    else
+      render :edit_restaurant_reservation
+    end
   end
 
   def destroy
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to :restaurant_reservations
   end
 
   private
@@ -40,7 +52,6 @@ class ReservationsController < ApplicationController
   end
 
   def load_restaurant
-    # binding.pry
     @restaurant = Restaurant.find(params[:restaurant_id])
   end
 

@@ -1,10 +1,19 @@
 <h2>Reservation Info for <%= @reservation.user.name %> </h2>
 
 <div>
-<p><%= link_to image_tag(@reservation.restaurant.picture_url)%> </p>
-<p>Reservation for <%= @reservation.date %>, <%= @reservation.hour %>:00</p>
-<p>Party Size: <%= @reservation.party_size %></p>
-<p>Restaurant Name: <%= @reservation.restaurant.name %></p>
+	<p><%= link_to image_tag(@reservation.restaurant.picture_url)%> </p>
+	<p>Reservation for <%= @reservation.date %>, <%= @reservation.hour %>:00</p>
+	<p>Party Size: <%= @reservation.party_size %></p>
+	<p>Restaurant Name: <%= @reservation.restaurant.name %></p>
+</div>
+
+<div>
+	<p>
+	<%= link_to "Edit Reservation", edit_restaurant_reservation_path %>
+	|
+	<%= link_to 'Destroy', [@reservation.restaurant, @reservation], method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+
 </div>
 
 <h3>Use this number to help us verify you once you reach our restaurant: <%= @reservation.id %>3123</h3>

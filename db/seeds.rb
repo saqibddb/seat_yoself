@@ -100,12 +100,12 @@ Restaurant.create!(
   capacity: 50
 )
 
-puts "\nCreating Reservations..."
-100.times do
-  Reservation.create!(
-    time: Faker::Time.forward(14, :evening),
-    party_size: Faker::Number.digit,
-    user_id: User.all.sample.id,
-    restaurant_id: Restaurant.all.sample.id
-  )
-end
+# puts "\nCreating Reservations..."
+# 100.times do
+#   Reservation.create!(
+#     time: Faker::Time.forward(14, :evening),
+#     party_size: Faker::Number.digit,
+#     user_id: User.all.sample.id,
+#     restaurant_id: Restaurant.all.sample.id
+#   )
+# end
