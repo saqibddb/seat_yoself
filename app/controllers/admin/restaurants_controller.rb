@@ -18,6 +18,11 @@ class Admin::RestaurantsController < Admin::ApplicationController
 
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    if @restaurant.save
+      redirect_to admin_restaurants_url
+    else
+      render :new
+    end
   end
 
   def edit

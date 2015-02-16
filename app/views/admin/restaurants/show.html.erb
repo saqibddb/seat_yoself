@@ -1,0 +1,12 @@
+<h3><%= @restaurant.name %></h3>
+
+<img src="<%= @restaurant.picture_url %>" alt="<%= @restaurant.name %>" width="20%">
+<p>Type: <%= @restaurant.cuisine %></p>
+<p>City: <%= @restaurant.city %></p>
+<p>address: <%= @restaurant.address %></p>
+<p>Phone Number: <%= @restaurant.phone_number %></p>
+<p>Capacity: <%= @restaurant.capacity %></p>
+<% if @restaurant.menu_url? %>
+  <p>Menu URL: <a href="<%= @restaurant.menu_url %>">View Menu</a></p>
+<% end %>
+
