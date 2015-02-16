@@ -4,7 +4,9 @@ class Reservation < ActiveRecord::Base
   validate :has_enough_seats
 
   def has_enough_seats
-  	errors.add(:party_size, "is too big")
+    if !restaurant.available?(party_size, date, hour)
+  	 errors.add(:party_size, "is too big to accommodate at that time")
+    end
   end
 
   belongs_to :restaurant
