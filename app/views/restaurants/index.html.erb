@@ -1,5 +1,20 @@
-<h2>Restaurants</h2>
+<Legend>Restaurants</legend>
 
+<% @restaurants.each do |restaurant| %>
+
+<div class="row">
+<div class="col-md-7">
+        <img class="img-responsive" src="<%= restaurant.picture_url %>" alt="">
+    </a>
+</div>
+<div class="col-md-5">
+    <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+    <h4><%= restaurant.city %></h4>
+</div>
+</div>
+
+<% end %>
+<!-- 
 <div class="restaurants">
 
 <% @restaurants.each do |restaurant| %>
@@ -10,3 +25,4 @@
 </a>
 
 </div>
+ -->
